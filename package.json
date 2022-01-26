@@ -1,5 +1,5 @@
 {
-  "name": "design-system",
+  "name": "@base-layout/design-system",
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --mode production",
