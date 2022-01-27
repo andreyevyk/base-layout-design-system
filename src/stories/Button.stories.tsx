@@ -13,3 +13,5 @@ export const Primary: ComponentStory<typeof Button> = () => <Button>Descobrir to
 export const Secondary: ComponentStory<typeof Button> = () => <Button color="secondary">Default Color</Button>;
 
 export const Large: ComponentStory<typeof Button> = () => <Button size='large'>Descobrir todos os lugares</Button>;
+
+export const Disabled: ComponentStory<typeof Button> = () => <Button disabled>Descobrir todos os lugares</Button>;
