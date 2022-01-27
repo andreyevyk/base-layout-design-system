@@ -17,6 +17,12 @@ export const {
       secondaryDark: "#115D8C",
 
       shape: "#FFFFFF",
+      shape02: "#DCE2E6",
+      background: "#E5E5E5",
+
+      title: "#123952",
+      text: "#617480",
+      complement: "#A0ACB3"
     },
   },
 });
