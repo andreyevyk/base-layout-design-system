@@ -1,6 +1,9 @@
 {
 	"compilerOptions": {
 		"baseUrl": "src",
+    "paths": {
+      "@emotion/core": ["@types/emotion.d.ts"],
+    },
 		"allowJs": false,
 		"allowSyntheticDefaultImports": true,
 		"alwaysStrict": true,
