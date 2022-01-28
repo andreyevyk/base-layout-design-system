@@ -4,7 +4,7 @@ name: 'Chromatic Publish'
 on: push
 
 jobs:
-  test:
+  storybook:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
