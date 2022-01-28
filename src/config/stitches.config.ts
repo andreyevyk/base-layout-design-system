@@ -19,10 +19,11 @@ export const {
       shape: "#FFFFFF",
       shape02: "#DCE2E6",
       background: "#E5E5E5",
+      background02: "#F5F8FA",
 
       title: "#123952",
       text: "#617480",
-      complement: "#A0ACB3"
+      complement: "#A0ACB3",
     },
   },
 });
