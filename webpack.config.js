@@ -1,21 +1,22 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const { StorybookWebpackFederationPlugin } = require("storybook-webpack-federation-plugin");
+const  HtmlWebPackPlugin  = require("html-webpack-plugin");
+const TsconfigPathsPlugin = require( 'tsconfig-paths-webpack-plugin');
 
-const deps = require("./package.json").dependencies;
+const path = require("path")
+
 module.exports = {
   output: {
-    publicPath: "http://localhost:4005/",
+    path: path.resolve(__dirname, "storybook-static/federation"),
+    publicPath: "//localhost:3030/federation/",
   },
-
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
+    plugins: [new TsconfigPathsPlugin()]
   },
-
   devServer: {
     port: 4005,
     historyApiFallback: true,
   },
-
   module: {
     rules: [
       {
@@ -26,8 +27,8 @@ module.exports = {
         },
       },
       {
-        test: /\.(css|s[ac]ss)$/i,
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        test: /\.(css)$/i,
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.(ts|tsx|js|jsx)$/,
@@ -38,23 +39,11 @@ module.exports = {
       },
     ],
   },
-
   plugins: [
-    new ModuleFederationPlugin({
-      name: "design_system",
-      filename: "remoteEntry.js",
-      remotes: {},
-      exposes: {},
-      shared: {
-        ...deps,
-        react: {
-          singleton: true,
-          requiredVersion: deps.react,
-        },
-        "react-dom": {
-          singleton: true,
-          requiredVersion: deps["react-dom"],
-        },
+    new StorybookWebpackFederationPlugin({
+      name: "designSystem",
+      files: { 
+        paths: ["./src/components/*.ts{,x}"],
       },
     }),
   ],
