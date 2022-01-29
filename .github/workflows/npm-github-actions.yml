@@ -23,14 +23,14 @@ jobs:
       contents: read
       packages: write
     steps:
-      - run: echo ${{secrets.GITHUB_TOKEN}}
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           always-auth: true
           node-version: 16
           registry-url: https://npm.pkg.github.com/
-      - run: yarn install --frozen-lockfile
-      - run: yarn publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - run: echo /home/runner/work/_temp/.npmrc
+      # - run: yarn install --frozen-lockfile
+      # - run: yarn publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
