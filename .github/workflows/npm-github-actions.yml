@@ -1,7 +1,10 @@
 
 name: NPM Publish
 
-on: push
+on: 
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -20,9 +23,11 @@ jobs:
       contents: read
       packages: write
     steps:
+      - run: echo ${{secrets.GITHUB_TOKEN}}
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
+          always-auth: true
           node-version: 16
           registry-url: https://npm.pkg.github.com/
       - run: yarn install --frozen-lockfile
