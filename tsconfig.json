@@ -18,7 +18,8 @@
 		],
 		"module": "esnext",
 		"moduleResolution": "node",
-		"noEmit": true,
+    "declaration": true,
+    "outDir": "./lib",
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"strict": true,
@@ -27,5 +28,6 @@
 	},
 	"include": [
 		"src"
-	]
+	],
+  "exclude": ["node_modules"]
 }
