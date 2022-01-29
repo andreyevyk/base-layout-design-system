@@ -1,8 +1,5 @@
-const { StorybookWebpackFederationPlugin } = require("storybook-webpack-federation-plugin");
 const TsconfigPathsPlugin = require( 'tsconfig-paths-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
-const path = require("path")
-const process = require("process")
 
 module.exports = {
   cache: false,
@@ -43,17 +40,9 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, "storybook-static/federation"),
-    publicPath: `//localhost:3030/federation/`,
+    publicPath: "http://localhost:4005/",
   },
-
   plugins: [
-    new StorybookWebpackFederationPlugin({
-      name: "designSystem",
-      files: { 
-        paths: ["./src/**/*.ts{,x}"],      
-      },
-    }),
-    new Dotenv()
+    new Dotenv(),
   ],
 };
