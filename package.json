@@ -11,6 +11,9 @@
     "prepare": "yarn build",
     "build:storybook": "build-storybook"
   },
+  "publishConfig": {
+    "@andreyevyk:registry": "https://npm.pkg.github.com"
+  },
   "license": "MIT",
   "author": {
     "name": "Andrey Evyk",
