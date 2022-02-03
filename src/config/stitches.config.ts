@@ -10,6 +10,7 @@ export const {
   createTheme,
   config,
 } = createStitches({
+  prefix: "ds",
   theme: {
     colors: {
       primary: "#F25D27",

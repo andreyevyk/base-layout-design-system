@@ -1,6 +1,6 @@
 {
   "name": "@andreyevyk/traveler-design-system",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "Traveler design system",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
