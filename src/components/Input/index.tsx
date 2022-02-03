@@ -5,7 +5,7 @@ import { ChangeEvent, useMemo, useState } from "react";
 import { theme } from "config/stitches.config";
 
 export interface InputProps extends WrapperProps{
-  inputClassName: string;
+  inputClassName?: string;
 }
 
 export const Input = ({
